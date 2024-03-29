@@ -22,4 +22,6 @@ public interface UserMapper {
 
 	void delete(UserVo userVo);
 
+	UserVo login(String userid, String passwd); //UserVo를 리턴한다.
+
 }

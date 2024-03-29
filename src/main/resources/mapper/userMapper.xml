@@ -68,6 +68,13 @@
     DELETE TUSER
     WHERE  USERID = #{userid}
     </delete>
+    
+    <select id="login">
+    SELECT USERID,USERNAME,EMAIL,UPOINT,
+           TO_CHAR(INDATE,'YY-MM-DD') INDATE
+    FROM   TUSER
+    WHERE  USERID=#{param1} AND PASSWD=#{param2}
+    </select>
  
 
 </mapper>
@@ -78,5 +85,7 @@
   <id column="대상 컬럼명" property="DTO멤버변수명"/>
   <result column="대상 컬럼명" property="DTO멤버변수명"/>
 </resultMap>    -->
+
+<!-- arg0, arg1, param1, param2... -->
 
 
